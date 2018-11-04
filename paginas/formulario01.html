@@ -1,0 +1,113 @@
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>Exercício 01 de Validação de Formulário
+HTML</title>
+
+<script>
+	function verifyForm(){
+
+			 if(document.frmcad.nome.value == "") {
+                alert("O campo \"Nome Completo\" deve ser preenchido !!!");
+                document.frmcad.nome.focus();
+                return(false);
+        }
+			if(document.frmcad.senha.value != document.frmcad.senha2.value) {
+                alert("Confirmação de senha incorreta!!!");
+                document.frmcad.senha.focus();
+                return(false);
+        }
+
+        	if(document.frmcad.senha.value == document.frmcad.senha2.value){
+            if(document.frmcad.senha.value.length < 6){
+                alert("A senha deverá conter no mínimo 6 caracteres!!!");
+                document.frmcad.senha.focus();
+                return(false);
+            }
+            else if(document.frmcad.senha.value.length > 12){
+                alert("Senha deverá conter no máximo 12 caracteres!!!");
+                document.frmcad.senha.focus();
+                return(false);
+            }
+        }
+
+        	if(document.frmcad.escolaridade.value == "0") {
+                alert("O campo \"Escolaridade\" deve ser escolhido!!!");
+                document.frmcad.escolaridade.focus();
+                return(false);
+        }
+
+ }
+
+
+ 		function checarEmail(){
+			if( document.forms[0].email.value==""
+   		|| document.forms[0].email.value.indexOf('@')==-1
+     || document.forms[0].email.value.indexOf('.')==-1 )
+			{
+	   alert( "Por favor, informe um E-MAIL válido!" );
+       document.frmcad.email.focus();
+       return false;
+			}
+	
+
+
+</script>
+
+</head>
+
+<body>
+		<center>
+   <font face="Arial">
+
+      <h2>Cadastro de Reserva</h2>
+
+      <form method="POST" action="form_envio.html" name="frmcad">
+
+         Nome Completo: <input type="text" size="35" name="nome"><br /><br />
+
+         Login: <input type = "text" name = "login"><br /><br />
+
+         Senha: <input type = "password" size="10" maxlength = "20" name = "senha"><br /><br />
+
+         Confirme a Senha: <input type = "password" size="10" maxlength = "20" name = "senha2"><br /><br />
+
+         E-mail: <input type = "text" size="40" name = "email" onblur="checarEmail();"><br /><br />
+
+         Idade: <input type = "text" size="5" maxlength = "3" name = "idade"><br /><br /> 
+
+         Sexo: <input type = "radio" name = "sexo" value = "M" checked>Masculino <input type = "radio" name = "sexo" value = "F"> Feminino<br><br>
+
+         Endereço Completo: <input type = "text" name="endereco" size="40"><br><br>
+
+         Cidade: <input type = "text" size="20" name="cidade" maxlength = "20"> - Estado: <input type = text size="2" name="estado" maxlength = "2"><br><br>
+
+         Escolaridade:  <select name = "escolaridade">
+      	                <option value="0">Escolha a Escolaridade</option>
+      	                <option value="grau1">1º Grau Completo</option>
+      	                <option value="grau2">2º Grau Completo</option>
+      	                <option value="superior">Superior Completo</option>
+      	                <option value="posgraduado">Pós Graduação</option>
+      	                <option value="mestre">Mestrado</option>
+      	                <option value="doutor">Doutorado</option>
+                        </select><br><br>
+
+         Área(s) de Interesse: <input type = "checkbox" name = "area_int" value = "TI">TI
+                               <input type = "checkbox" name = "area_int" value = "Administrativa"> Administrativa
+                               <input type = "checkbox" name = "area_int" value = "Financeira"> Financeira
+                               <input type = "checkbox" name = "area_int" value = "Operacional"> Operacional<br><br>
+
+         Observações / Comentários: <textarea cols = "35" rows = "3" name="comentario" onFocus="javascript:this.value=''">Deixe aqui suas observações / comentários</textarea><br><br>
+
+
+        <input onclick=javascript:return(verifyForm()); type = "SUBMIT" value = "GRAVAR">
+        <input type=reset VALUE="LIMPAR">
+      </form>
+      <script>document.frmcad.nome.focus()</script>
+</font>
+</center>
+
+
+
+</body>
+</html>

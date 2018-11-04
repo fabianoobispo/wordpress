@@ -1,0 +1,96 @@
+<html>
+<head>
+	<title>javascript exercicio 06</title>
+
+<script>
+	dataCompleta = new Date ();
+
+	diaNumero = dataCompleta.getDate();	
+	diaSemana = dataCompleta.getDay();
+	mes = dataCompleta.getMonth();
+	ano = dataCompleta.getFullYear();
+
+	var nomeDia;
+	var nomeMes;
+
+
+
+	switch(diaSemana){
+		case 0:
+		nomeDia = 'Domingo';
+		break;
+		case 1:
+		nomeDia = 'Segunda-feira';
+		break;
+		case 2:
+		nomeDia = 'Tesça-feria';
+		break;
+		case 3:
+		nomeDia = 'Quarta-feira';
+		break;
+		case 4:
+		nomeDia = 'Quinta-feira';
+		break;
+		case 5:
+		nomeDia = 'Sexta-feira';
+		break;
+		case 6:
+		nomeDia = 'Sabado';
+		break;
+	}
+
+		switch(mes){
+		case 0:
+		nomeMes = 'Janeiro';
+		break;
+		case 1:
+		nomeMes = 'Fevereiro';
+		break;
+		case 2:
+		nomeMes = 'Março';
+		break;
+		case 3:
+		nomeMes = 'Abril';
+		break;
+		case 4:
+		nomeMes = 'Maio';
+		break;
+		case 5:
+		nomeMes = 'Junho';
+		break;
+		case 6:
+		nomeMes = 'Julho';
+		break;
+		case 7:
+		nomeMes = 'Agosto';
+		break;
+		case 8:
+		nomeMes = 'Setenbro';
+		break;
+		case 9:
+		nomeMes = 'Outubro';
+		break;
+		case 10:
+		nomeMes = 'Novenbro';
+		break;
+		case 11:
+		nomeMes = 'Deszenbro';
+		break;
+	}
+
+
+	document.write("Juiz de Fora - MG, "+nomeDia+", "+diaNumero+" de "+nomeMes+" de "+ano+".");
+
+	
+	
+	
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

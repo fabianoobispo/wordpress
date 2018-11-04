@@ -1,0 +1,1 @@
+para subir o sie tem que isntalar o banco de dados com as finfomacoes do arquivo wp-config.php
